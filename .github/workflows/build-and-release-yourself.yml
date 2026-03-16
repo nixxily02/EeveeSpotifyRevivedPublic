@@ -45,7 +45,8 @@ jobs:
           fi
 
       - name: Download and Validate Tweak
-        run: |
+        run: | 
+        echo "Downloading from: ${{ inputs.tweak_url }}"
           wget "${{ inputs.tweak_url }}" --no-verbose -O ${{ github.workspace }}/eeveespotify.deb
           file_type=$(file --mime-type -b ${{ github.workspace }}/eeveespotify.deb)
           if [[ "$file_type" != "application/vnd.debian.binary-package" ]]; then
