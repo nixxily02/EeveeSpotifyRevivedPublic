@@ -46,7 +46,7 @@ jobs:
 
       - name: Download and Validate Tweak
         run: |
-        wget "${{ inputs.tweak_url }}" --no-verbose -O "${{ github.workspace }}/eeveespotify.deb" && file_type=$(file --mime-type -b "${{ github.workspace }}/eeveespotify.deb") && if [ "$file_type" != "application/vnd.debian.binary-package" ]; then echo "Validation failed: The file is not a valid DEB file. Detected type: $file_type."; exit 1; fi
+         wget "${{ inputs.tweak_url }}" --no-verbose -O "${{ github.workspace }}/eeveespotify.deb" && file_type=$(file --mime-type -b "${{ github.workspace }}/eeveespotify.deb") && if [ "$file_type" != "application/vnd.debian.binary-package" ]; then echo "Validation failed: The file is not a valid DEB file. Detected type: $file_type."; exit 1; fi
 
       - name: Download SwiftProtobuf
         run: |
